@@ -23,14 +23,20 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Verify package.json existence
+        run: ls -la /home/runner/work/S-rie-de-TP-DevOps---CI-CD-2-/S-rie-de-TP-DevOps---CI-CD-2-/
+
       - name: Install dependencies
         run: npm install
+        working-directory: /home/runner/work/S-rie-de-TP-DevOps---CI-CD-2-/S-rie-de-TP-DevOps---CI-CD-2-/
 
       - name: Build project
         run: npm run build
+        working-directory: /home/runner/work/S-rie-de-TP-DevOps---CI-CD-2-/S-rie-de-TP-DevOps---CI-CD-2-/
 
       - name: Build Docker image
         run: docker build -t my-app .
+        working-directory: /home/runner/work/S-rie-de-TP-DevOps---CI-CD-2-/S-rie-de-TP-DevOps---CI-CD-2-/
 
       - name: Log in to DockerHub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u ${{ secrets.DOCKER_USERNAME }} --password-stdin
@@ -51,9 +57,11 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: /home/runner/work/S-rie-de-TP-DevOps---CI-CD-2-/S-rie-de-TP-DevOps---CI-CD-2-/
 
       - name: Run tests
         run: npm test
+        working-directory: /home/runner/work/S-rie-de-TP-DevOps---CI-CD-2-/S-rie-de-TP-DevOps---CI-CD-2-/
 
   deploy:
     runs-on: ubuntu-latest
