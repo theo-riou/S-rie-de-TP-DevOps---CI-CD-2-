@@ -1,19 +1,19 @@
 {
   "name": "my-flask-app",
   "version": "1.0.0",
-  "description": "A simple Flask application",
+  "description": "A simple Flask application with CI/CD",
   "main": "index.js",
   "scripts": {
     "start": "python app.py",
     "build": "echo 'Build step'",
     "test": "pytest"
   },
-  "author": "Votre Nom",
+  "author": "theo-riou",
   "license": "MIT",
   "dependencies": {
-    "flask": "^2.0.0"
+    "express": "^4.17.1"
   },
   "devDependencies": {
-    "pytest": "^6.2.4"
+    "jest": "^27.0.6"
   }
 }
